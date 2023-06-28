@@ -1,18 +1,32 @@
 /* Desenvolva seu código aqui */
-import { loginRequest } from "./requests.js";
+import { loginRequest, loginFailureColor } from "./requests.js";
+import { toast } from "./toast.js";
 
 function handleLoginRequest() {
   const inputsLoginRequest = document.querySelectorAll(".input__login");
   const buttonLoginRequest = document.querySelector("#button__login");
 
-  let loginUser = {};
+  let loginUserBody = {};
+  let count = 0;
 
   buttonLoginRequest.addEventListener("click", (event) => {
     event.preventDefault();
+
     inputsLoginRequest.forEach((input) => {
-      loginUser[input.name] = input.value;
+      if (input.value.trim() === "") {
+        count++;
+      }
+      loginUserBody[input.name] = input.value;
     });
-    loginRequest(loginUser);
+    if (count !== 0) {
+      count = 0;
+      return toast(
+        "Por favor preencha todos os campos de login",
+        loginFailureColor
+      );
+    } else {
+      loginRequest(loginUserBody);
+    }
   });
 }
 
