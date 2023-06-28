@@ -18,6 +18,58 @@
     <link rel="stylesheet" href="./src/styles/buttons.css" />
   </head>
   <body>
+    <main class="container">
+      <section class="title__container">
+        <h2>Pet info</h2>
+        <p><span>Amor</span> e <span>carinho</span> por meio do conhecimento</p>
+        <p>
+          Todas as informações para melhorar a vida do seu pet em um só lugar
+        </p>
+        <div class="left_images">
+          <img src="./src/assets/img/Imglogin1.svg" />
+          <img src="./src/assets/img/Imglogin2.svg" />
+          <img src="./src/assets/img/Imglogin3.svg" />
+        </div>
+        <img src="./src/assets/img/Imglogin4.svg" />
+      </section>
+      <section class="form__container">
+        <h2>Login</h2>
+        <form class="form__login">
+          <label for="email">Email</label>
+          <input
+            type="text"
+            id="email"
+            name="email"
+            class="input__login"
+            placeholder="Digite seu email aqui"
+          />
+          <label for="password">Senha</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="input__login"
+            placeholder="Digite sua senha aqui"
+          />
+          <button
+            type="submit"
+            class="confirm__button button__login"
+            id="button__login"
+          >
+            Acessar
+          </button>
+          <div class="login__account">
+            <span>Ainda não possui conta?</span>
+            <p>Clicando no botão abaixo,você pode se cadastrar rapidamente</p>
+            <a
+              href="./src/pages/signup.html"
+              class="redirect-edit__button login__signup"
+              >Cadastrar
+            </a>
+          </div>
+        </form>
+      </section>
+    </main>
     <script src="./src/scripts/index.js" type="module"></script>
   </body>
 </html>
