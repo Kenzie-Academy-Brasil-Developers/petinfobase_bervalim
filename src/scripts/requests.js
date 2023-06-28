@@ -1,4 +1,8 @@
+import { toast } from "./toast.js";
+
 const baseURL = "http://localhost:3333";
+const loginSucessColor = "hsl(162, 88%, 26%)";
+const loginFailureColor = "hsl(349, 57%, 50%)";
 
 export async function loginRequest(loginRequestBody) {
   const tokenLogin = await fetch(`${baseURL}/login`, {
@@ -12,12 +16,15 @@ export async function loginRequest(loginRequestBody) {
       const responseJSON = await res.json();
       if (res.ok) {
         localStorage.setItem("@petInfo:tokenLogin", responseJSON.token);
+        toast("Login realizado com sucesso", loginSucessColor);
         return responseJSON;
       } else {
         throw new Error(responseJSON.message);
       }
     })
-    .catch((err) => alert(err));
+    .catch((err) => {
+      toast(err.message, loginFailureColor);
+    });
 
   return tokenLogin;
 }
