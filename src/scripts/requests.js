@@ -35,4 +35,29 @@ export async function loginRequest(loginRequestBody) {
   return tokenLogin;
 }
 
-expo;
+export async function createNewUserRequest(createNewUserRequestBody) {
+  const newUser = await fetch(`${baseURL}/users/create`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(createNewUserRequestBody),
+  })
+    .then(async (res) => {
+      const responseJSON = await res.json();
+      if (res.ok) {
+        toast("Sua conta foi criada com sucesso", loginSucessColor);
+        setTimeout(() => {
+          location.replace("../../index.html");
+        }, 2000);
+        return responseJSON;
+      } else {
+        throw new Error(responseJSON.message);
+      }
+    })
+    .catch((err) => {
+      toast(err.message, loginFailureColor);
+    });
+
+  return newUser;
+}
