@@ -16,7 +16,7 @@ function handleLoginRequest() {
       if (input.value.trim() === "") {
         count++;
       }
-      loginUserBody[input.name] = input.value;
+      loginUserBody[input.name] = input.value.trim();
     });
     if (count !== 0) {
       count = 0;

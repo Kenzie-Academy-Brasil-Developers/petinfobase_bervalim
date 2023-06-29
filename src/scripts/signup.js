@@ -6,15 +6,26 @@ function handleCreateNewUserRequest() {
   const buttonCreateNewUser = document.querySelector("#register__button");
 
   let newUser = {};
+  let count = 0;
 
   buttonCreateNewUser.addEventListener("click", (event) => {
     event.preventDefault();
 
     inputCreateNewUser.forEach((input) => {
+      if (input.value.trim() === "") {
+        count++;
+      }
       newUser[input.name] = input.value;
     });
-
-    createNewUserRequest(newUser);
+    if (count !== 0) {
+      count = 0;
+      return toast(
+        "Por favor preencha todos os campos de cadastro",
+        loginFailureColor
+      );
+    } else {
+      createNewUserRequest(newUser);
+    }
   });
 }
 
