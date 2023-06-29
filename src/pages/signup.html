@@ -21,6 +21,7 @@
     />
     <link rel="stylesheet" href="../styles/globalStyles.css" />
     <link rel="stylesheet" href="../styles/buttons.css" />
+    <link rel="stylesheet" href="../styles/signup.css" />
   </head>
   <body>
     <main class="container">
@@ -30,42 +31,58 @@
           <a class="return__button" href="/index.html">Voltar para o login</a>
         </div>
         <form class="form__signup">
-          <label for="username">Usuário</label>
-          <input
-            type="text"
-            id="username"
-            name="username"
-            class="input__signup"
-            placeholder="Digite seu usuário aqui"
-            required="Campo obrigatório"
-          />
-          <label for="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            class="input__signup"
-            placeholder="Digite seu email aqui"
-            required="Campo obrigatório"
-          />
-          <label for="avatar">Link da foto de perfil</label>
-          <input
-            type="text"
-            id="avatar"
-            name="avatar"
-            class="input__signup"
-            placeholder="Insira o link aqui"
-            required="Campo obrigatório"
-          />
-          <label for="password">Senha</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            class="input__signup"
-            placeholder="Digite sua senha aqui"
-            required="Campo obrigatório"
-          />
+          <div class="signup__container">
+            <label for="username">Usuário</label>
+            <div>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                class="input__signup"
+                placeholder="Digite seu usuário aqui"
+                required="Campo obrigatório"
+              />
+            </div>
+          </div>
+          <div class="signup__container">
+            <label for="email">Email</label>
+            <div>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="input__signup"
+                placeholder="Digite seu email aqui"
+                required="Campo obrigatório"
+              />
+            </div>
+          </div>
+          <div class="signup__container">
+            <label for="avatar">Link da foto de perfil</label>
+            <div>
+              <input
+                type="text"
+                id="avatar"
+                name="avatar"
+                class="input__signup"
+                placeholder="Insira o link aqui"
+                required="Campo obrigatório"
+              />
+            </div>
+          </div>
+          <div class="signup__container">
+            <label for="password">Senha</label>
+            <div>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                class="input__signup"
+                placeholder="Digite sua senha aqui"
+                required="Campo obrigatório"
+              />
+            </div>
+          </div>
           <div class="signup__buttons">
             <button class="confirm__button" id="register__button">
               Cadastrar
