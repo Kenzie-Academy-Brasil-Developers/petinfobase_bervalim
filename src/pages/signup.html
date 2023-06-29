@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pet Info | Cadastro</title>
+    <!-- Fontes-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <link rel="stylesheet" href="../styles/globalStyles.css" />
+    <link rel="stylesheet" href="../styles/buttons.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="form__container">
+        <div class="return__container">
+          <h3>Cadastro</h3>
+          <a class="return__button" href="/index.html">Voltar para o login</a>
+        </div>
+        <form class="form__signup">
+          <label for="username">Usuário</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            class="input__signup"
+            placeholder="Digite seu usuário aqui"
+            required="Campo obrigatório"
+          />
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="input__signup"
+            placeholder="Digite seu email aqui"
+            required="Campo obrigatório"
+          />
+          <label for="avatar">Link da foto de perfil</label>
+          <input
+            type="text"
+            id="avatar"
+            name="avatar"
+            class="input__signup"
+            placeholder="Insira o link aqui"
+            required="Campo obrigatório"
+          />
+          <label for="password">Senha</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="input__signup"
+            placeholder="Digite sua senha aqui"
+            required="Campo obrigatório"
+          />
+          <div class="signup__buttons">
+            <button class="confirm__button signup__button">Cadastrar</button>
+            <a class="back__login" href="/index.html">Voltar para o login</a>
+          </div>
+        </form>
+      </section>
+      <section class="presentation__container">
+        <h2>Petinfo</h2>
+        <p>Ooooooba!</p>
+        <p>
+          Agora vamos poder contribuir para o bem estar do seu pet por meio do
+          conhecimento
+        </p>
+        <div class="left__image">
+          <img src="../assets/img/imgCadastro1.svg" alt="sleepy_cat" />
+        </div>
+        <div class="rigth__images">
+          <img src="../assets/img/imgCadastro2.svg" alt="white__cat" />
+          <img src="../assets/img/imgCadastro3.svg" alt="happy__dog" />
+          <img src="../assets/img/imgCadastro4.svg" alt="serious__cat" />
+        </div>
+      </section>
+    </main>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <script src="../scripts/signup.js"></script>
+  </body>
+</html>

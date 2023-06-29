@@ -34,3 +34,5 @@ export async function loginRequest(loginRequestBody) {
 
   return tokenLogin;
 }
+
+expo;
