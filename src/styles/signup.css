@@ -6,5 +6,114 @@
   flex-direction: column;
   align-items: flex-start;
   width: 330px;
-  height: 500px;
+  height: 520px;
+}
+.return__container {
+  display: flex;
+  justify-content: space-between;
+  gap: 70px;
+}
+.return__container > h3 {
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--gray100);
+}
+
+.return__button {
+  text-decoration: none;
+  border-radius: 0.25rem;
+  border: 0.0625rem solid var(--gray600);
+  width: 150px;
+  padding: 3px 5px;
+  height: 26px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--gray100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signup__container {
+  margin-top: 15px;
+}
+
+.signup__container > label {
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: var(--gray100);
+}
+
+.input__signup {
+  margin-top: 8px;
+  border-radius: 0.25rem;
+  width: 280px;
+  height: 33px;
+  border: 1px solid var(--gray600);
+  background-color: var(--gray800);
+}
+
+.input__signup::placeholder {
+  font-weight: 400;
+  font-size: 0.875rem;
+  padding: 0 13px;
+}
+
+.signup__buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 15px;
+}
+
+.register__button {
+  background-color: var(--brand100);
+  border: 1px solid var(--brand100);
+  border-radius: 0.25rem;
+  width: 286px;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  color: var(--gray900);
+}
+
+.back__login {
+  border-radius: 4px;
+  border: 1px solid var(--gray600);
+  text-decoration: none;
+  width: 286px;
+  text-align: center;
+  padding: 5px 10px;
+  margin-top: 7px;
+  font-size: 0.875rem;
+  color: var(--gray100);
+  font-weight: 500;
+}
+
+.presentation__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.presentation__container > h2 {
+  margin-top: 105px;
+  font-weight: 500;
+  font-size: 27px;
+  color: var(--gray100);
+}
+
+.presentation__paragraph {
+  margin-top: 12px;
+  color: var(--brand100);
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.presentation__contribution {
+  margin-top: 12px;
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--gray300);
+  width: 320px;
 }

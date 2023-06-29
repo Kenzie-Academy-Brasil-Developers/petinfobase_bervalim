@@ -16,7 +16,7 @@
 }
 
 body {
-  /* font-family: "Inter, sans-serif"; */
+  font-family: "Inter, sans-serif";
 }
 
 .container {
@@ -25,7 +25,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
+  gap: 90px;
 }
 
 dialog {

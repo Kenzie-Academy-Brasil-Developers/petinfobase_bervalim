@@ -5,7 +5,7 @@
 }
 
 .title__container > h2 {
-  font-size: 1.6875rem;
+  font-size: 27px;
   font-weight: 600;
   color: var(--gray100);
 }
@@ -130,7 +130,6 @@
 .login__signup {
   text-decoration: none;
   border: 1px solid var(--gray600);
-  background-color: var(--gray600);
   border-radius: 0.25rem;
   text-align: center;
   width: 328px;
