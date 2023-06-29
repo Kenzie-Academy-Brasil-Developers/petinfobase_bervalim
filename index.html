@@ -46,37 +46,44 @@
       <section class="form__container">
         <h2>Login</h2>
         <form class="form__login">
-          <label for="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            class="input__login"
-            placeholder="Digite seu email aqui"
-            required="Campo obrigatório"
-          />
-          <label for="password">Senha</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            class="input__login"
-            placeholder="Digite sua senha aqui"
-            required="Campo obrigatório"
-          />
-          <button
-            type="submit"
-            class="confirm__button button__login"
-            id="button__login"
-          >
+          <div class="input__container">
+            <label for="email">Email</label>
+            <div>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="input__login"
+                placeholder="Digite seu email aqui"
+                required="Campo obrigatório"
+              />
+            </div>
+          </div>
+          <div class="input__container">
+            <label for="password">Senha</label>
+            <div>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                class="input__login"
+                placeholder="Digite sua senha aqui"
+                required="Campo obrigatório"
+              />
+            </div>
+          </div>
+          <button type="submit" class="button__login" id="button__login">
             Acessar
           </button>
           <div class="login__account">
-            <span>Ainda não possui conta?</span>
+            <span class="account">Ainda não possui conta?</span>
             <p>Clicando no botão abaixo,você pode se cadastrar rapidamente</p>
+          </div>
+          <div class="signup__container">
             <a
               href="./src/pages/signup.html"
-              class="redirect-edit__button login__signup"
+              target="_blank"
+              class="login__signup"
               >Cadastrar
             </a>
           </div>
