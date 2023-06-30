@@ -155,3 +155,25 @@ export async function deletePostById(postId) {
 
   return post;
 }
+
+// Requisição para pegar o perfil do usuário
+export async function getUsersProfile() {
+  const token = localStorage.getItem("@petInfo:tokenLogin");
+  const userProfile = await fetch(`${baseURL}/users/profile`, {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  })
+    .then(async (res) => {
+      const responseJSON = await res.json();
+      if (res.ok) {
+        return responseJSON;
+      } else {
+        throw new Error(responseJSON.message);
+      }
+    })
+    .catch((err) => toast(err.message, loginFailureColor));
+
+  return userProfile;
+}
