@@ -61,3 +61,49 @@ export async function createNewUserRequest(createNewUserRequestBody) {
 
   return newUser;
 }
+
+// Requisição criar novo post
+export async function createPostRequest(createPostRequestBody) {
+  const token = localStorage.getItem("@petInfo:tokenLogin");
+  const newPost = await fetch(`${baseURL}/posts/create`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(createPostRequestBody),
+  })
+    .then(async (res) => {
+      const responseJSON = await res.json();
+
+      if (res.ok) {
+        toast("Post criado com sucesso", loginSucessColor);
+        return responseJSON;
+      } else {
+        throw new Error(responseJSON.message);
+      }
+    })
+    .catch((err) => toast(err.message, loginFailureColor));
+
+  return newPost;
+}
+// Requisição para pegar todos os posts
+export async function getAllPosts() {
+  const token = localStorage.getItem("@petInfo:tokenLogin");
+  const allPosts = await fetch(`${baseURL}/posts`, {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  })
+    .then((res) => {
+      if (res.ok) {
+        return res.json();
+      } else {
+        throw new Error("Problemas no servidor,tente novamente mais tarde");
+      }
+    })
+    .catch((err) => toast(err.message, loginFailureColor));
+
+  return allPosts;
+}
