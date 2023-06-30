@@ -16,7 +16,7 @@ export async function render(array = []) {
   });
 }
 
-function createPost({ id, title, content, user }) {
+function createPost({ id, title, content, user, createdAt }) {
   const cardPostContainer = document.createElement("li");
   const divContainerFirst = document.createElement("div");
   const divPersonalUserInformation = document.createElement("div");
@@ -35,8 +35,30 @@ function createPost({ id, title, content, user }) {
   cardPostContainer.classList.add("card__container");
   divContainerFirst.classList.add("container__first");
   divPersonalUserInformation.classList.add("container__info");
+  divButtons.classList.add("container__buttons");
+  postDiv.classList.add("post");
 
   imageUser.src = user.avatar;
   spanUsername.innerText = user.username;
   spanSymbol.innerText = "|";
+  spanDate.innerText = new Date(createdAt).toLocaleDateString();
+  editionButton.innerText = "Editar";
+  deleteButton.innerText = "Excluir";
+  deleteButton.dataset.postId = id;
+  postTitle.innerText = title;
+  postDescription.innerText = content;
+  buttonAcessPost.innerText = "Acessar publicação";
+
+  divPersonalUserInformation.append(
+    imageUser,
+    spanUsername,
+    spanSymbol,
+    spanDate
+  );
+  divButtons.append(editionButton, deleteButton);
+  divContainerFirst.append(divPersonalUserInformation, divButtons);
+  postDiv.append(postTitle, postDescription, buttonAcessPost);
+  cardPostContainer.append(divContainerFirst, postDiv);
+
+  return cardPostContainer;
 }
