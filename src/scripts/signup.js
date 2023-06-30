@@ -15,7 +15,7 @@ function handleCreateNewUserRequest() {
       if (input.value.trim() === "") {
         count++;
       }
-      newUser[input.name] = input.value;
+      newUser[input.name] = input.value.trim();
     });
     if (count !== 0) {
       count = 0;

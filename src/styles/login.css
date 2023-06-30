@@ -97,6 +97,11 @@
   color: var(--gray900);
 }
 
+.button__login:hover {
+  background-color: var(--brand200);
+  cursor: pointer;
+}
+
 .login__account {
   display: flex;
   flex-direction: column;
