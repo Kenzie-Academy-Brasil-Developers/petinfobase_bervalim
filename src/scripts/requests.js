@@ -107,3 +107,51 @@ export async function getAllPosts() {
 
   return allPosts;
 }
+
+// Requisição para atualizar um post por id
+export async function updatePostById(updatePostByIdBody, postID) {
+  const token = localStorage.getItem("@petInfo:tokenLogin");
+  const post = await fetch(`${baseURL}/posts/${postID}`, {
+    method: "PATCH",
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(updatePostByIdBody),
+  })
+    .then(async (res) => {
+      const responseJson = await res.json();
+      if (res.ok) {
+        toast("Post atualizado com sucesso", loginSucessColor);
+        return responseJson;
+      } else {
+        throw new Error(responseJson.message);
+      }
+    })
+    .catch((err) => toast(err.message, loginFailureColor));
+
+  return post;
+}
+
+// Requisição para deletar os posts por ID
+export async function deletePostById(postId) {
+  const token = localStorage.getItem("@petInfo:tokenLogin");
+  const post = await fetch(`${baseURL}/posts/${postId}`, {
+    method: "DELETE",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  })
+    .then(async (res) => {
+      const responseJSON = await res.json();
+      if (res.ok) {
+        toast("Post deletado com sucesso", loginSucessColor);
+        return responseJSON;
+      } else {
+        throw new Error(responseJSON.message);
+      }
+    })
+    .catch((err) => toast(err.message, loginFailureColor));
+
+  return post;
+}

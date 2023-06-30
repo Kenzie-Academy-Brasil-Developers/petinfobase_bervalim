@@ -1,4 +1,9 @@
-import { createPostRequest, getAllPosts } from "./requests.js";
+import {
+  createPostRequest,
+  getAllPosts,
+  updatePostById,
+  deletePostById,
+} from "./requests.js";
 
 // createPostRequest({
 //   title: "Libertem os caes",
@@ -6,3 +11,14 @@ import { createPostRequest, getAllPosts } from "./requests.js";
 // });
 
 console.log(await getAllPosts());
+
+// console.log(await getAllPosts());
+
+// updatePostById(
+//   {
+//     title: "Não trate os cachorros",
+//   },
+//   "d1ac2a8b-2a3f-4abf-8a99-b4b99b0c347f"
+// );
+
+deletePostById("4a43ad7c-ef42-4d61-ad9e-bd79c7f96ced");
