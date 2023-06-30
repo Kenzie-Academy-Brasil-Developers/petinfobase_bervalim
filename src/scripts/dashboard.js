@@ -10,7 +10,7 @@ import {
 //   content: "Não os deixem em correntes",
 // });
 
-console.log(await getAllPosts());
+// console.log(await getAllPosts());
 
 // console.log(await getAllPosts());
 
@@ -21,4 +21,4 @@ console.log(await getAllPosts());
 //   "d1ac2a8b-2a3f-4abf-8a99-b4b99b0c347f"
 // );
 
-deletePostById("4a43ad7c-ef42-4d61-ad9e-bd79c7f96ced");
+// deletePostById("d1ac2a8b-2a3f-4abf-8a99-b4b99b0c347f");
