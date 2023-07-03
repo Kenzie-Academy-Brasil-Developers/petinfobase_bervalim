@@ -55,6 +55,7 @@ export function showEditTaskModal(button, title, content) {
     inputTitle.value = title;
     inputContent.value = content;
     modalController.showModal();
+    closeEditModal();
   });
 
   // });
@@ -105,6 +106,19 @@ function closeModal() {
   });
 }
 
+function closeEditModal() {
+  const buttonCloseEditModal = document.querySelectorAll("#close__button");
+  const modalController = document.querySelector(
+    ".modal__controller__editPost"
+  );
+
+  buttonCloseEditModal.forEach((button) => {
+    button.addEventListener("click", () => {
+      modalController.close();
+    });
+  });
+}
+
 export function handleDeletePosts() {
   // Pegando todos os botões de deletar
   const deletePostsButton = document.querySelectorAll(".delete__button");
@@ -127,4 +141,3 @@ await showDashboard();
 showHeader();
 showAddTaskModal();
 handleNewPostModal();
-// showEditTaskModal();
