@@ -43,6 +43,23 @@ function showAddTaskModal() {
   });
 }
 
+export function showEditTaskModal(button, title, content) {
+  // const buttonEditPublication = document.querySelectorAll(".edit__button");
+  const modalController = document.querySelector(
+    ".modal__controller__editPost"
+  );
+  // buttonEditPublication.forEach((button) => {
+  button.addEventListener("click", () => {
+    const inputTitle = document.querySelector("#editTitle");
+    const inputContent = document.querySelector("#editContent");
+    inputTitle.value = title;
+    inputContent.value = content;
+    modalController.showModal();
+  });
+
+  // });
+}
+
 function handleNewPostModal() {
   const inputsCreateNewPost = document.querySelectorAll(".create__task");
   const buttonCreateNewPost = document.querySelector("#sendPublication");
@@ -88,8 +105,26 @@ function closeModal() {
   });
 }
 
-authentication();
-showDashboard();
+export function handleDeletePosts() {
+  // Pegando todos os botões de deletar
+  const deletePostsButton = document.querySelectorAll(".delete__button");
+
+  deletePostsButton.forEach((button) => {
+    button.addEventListener("click", async (event) => {
+      deletePostById(event.target.dataset.postId);
+
+      // const allPosts = await getAllPosts();
+
+      // await render(allPosts);
+      await showDashboard();
+    });
+  });
+}
+
+// authentication();
+
+await showDashboard();
 showHeader();
 showAddTaskModal();
 handleNewPostModal();
+// showEditTaskModal();

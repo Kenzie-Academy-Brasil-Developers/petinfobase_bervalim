@@ -14,6 +14,7 @@ export async function loginRequest(loginRequestBody) {
   })
     .then(async (res) => {
       const responseJSON = await res.json();
+
       if (res.ok) {
         localStorage.setItem("@petInfo:tokenLogin", responseJSON.token);
         toast(
@@ -31,7 +32,6 @@ export async function loginRequest(loginRequestBody) {
     .catch((err) => {
       toast(err.message, loginFailureColor);
     });
-
   return tokenLogin;
 }
 

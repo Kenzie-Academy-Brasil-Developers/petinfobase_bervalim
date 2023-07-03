@@ -176,7 +176,43 @@
           </div>
         </form>
       </dialog>
-      <dialog class="modal__controller__editPost"></dialog>
+      <dialog class="modal__controller__editPost">
+        <div class="edit_post_modal__container">
+          <p>edição</p>
+          <button id="close__button">X</button>
+        </div>
+        <form class="edit__form">
+          <div class="edit__container">
+            <label for="editTitle">Título do post</label>
+            <div>
+              <input
+                type="text"
+                id="editTitle"
+                name="title"
+                class="edit__post"
+                required
+                minlength="8"
+                maxlength="140"
+              />
+            </div>
+          </div>
+          <div class="edit__container">
+            <label for="editContent">Conteúdo do post</label>
+            <div>
+              <textarea
+                id="editContent"
+                name="content"
+                class="edit__post"
+                required
+              ></textarea>
+            </div>
+          </div>
+          <div class="edit__buttons">
+            <button type="button">Cancelar</button>
+            <button id="editPublication">Salvar alterações</button>
+          </div>
+        </form>
+      </dialog>
     </main>
     <script
       type="text/javascript"

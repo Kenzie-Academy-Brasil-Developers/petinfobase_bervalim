@@ -1,5 +1,6 @@
 import { toast } from "./toast.js";
-import { loginFailureColor } from "./requests.js";
+import { loginFailureColor, deletePostById } from "./requests.js";
+import { handleDeletePosts, showEditTaskModal } from "./dashboard.js";
 
 export async function render(array = []) {
   const listOfPosts = document.querySelector(".container__posts");
@@ -43,11 +44,20 @@ function createPost({ id, title, content, user, createdAt }) {
   spanSymbol.innerText = "|";
   spanDate.innerText = new Date(createdAt).toLocaleDateString();
   editionButton.innerText = "Editar";
+  editionButton.classList.add("edit__button");
   deleteButton.innerText = "Excluir";
   deleteButton.dataset.postId = id;
+  deleteButton.classList.add("delete__button");
+
+  deleteButton.addEventListener("click", async (event) => {
+    await deletePostById(event.target.dataset.postId);
+    cardPostContainer.remove();
+  });
+  showEditTaskModal(editionButton, title, content);
   postTitle.innerText = title;
   postDescription.innerText = content;
   buttonAcessPost.innerText = "Acessar publicação";
+  buttonAcessPost.dataset.postId = id;
 
   divPersonalUserInformation.append(
     imageUser,
