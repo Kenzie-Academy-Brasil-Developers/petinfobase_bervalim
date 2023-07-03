@@ -1,7 +1,7 @@
 import { toast } from "./toast.js";
 
 const baseURL = "http://localhost:3333";
-const loginSucessColor = "hsl(162, 88%, 26%)";
+export const loginSucessColor = "hsl(162, 88%, 26%)";
 export const loginFailureColor = "hsl(349, 57%, 50%)";
 
 export async function loginRequest(loginRequestBody) {

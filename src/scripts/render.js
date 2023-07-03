@@ -47,6 +47,7 @@ function createPost({ id, title, content, user, createdAt }) {
   editionButton.classList.add("edit__button");
   deleteButton.innerText = "Excluir";
   deleteButton.dataset.postId = id;
+  editionButton.dataset.postId = id;
   deleteButton.classList.add("delete__button");
 
   deleteButton.addEventListener("click", async (event) => {

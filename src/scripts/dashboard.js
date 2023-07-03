@@ -5,6 +5,7 @@ import {
   deletePostById,
   getUsersProfile,
   loginFailureColor,
+  loginSucessColor,
 } from "./requests.js";
 
 import { render } from "./render.js";
@@ -97,6 +98,39 @@ function handleNewPostModal() {
   });
 }
 
+function editPostModal() {
+  const inputsEditModal = document.querySelectorAll(".edit__post");
+  const formEditModal = document.querySelector(".edit__form");
+  const editModalController = document.querySelector(
+    ".modal__controller__editPost"
+  );
+  const postEdition = {};
+  let count = 0;
+
+  formEditModal.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    inputsEditModal.forEach((input) => {
+      if (input.value.trim() === "") {
+        count++;
+      }
+      postEdition[input.name] = input.value;
+    });
+
+    if (count !== 0) {
+      count = 0;
+      toast("Por favor, preencha os dados necessários", loginFailureColor);
+    } else {
+      updatePostById(event.target.dataset.postId, postEdition);
+      toast("Post Atualizado com sucesso", loginSucessColor);
+
+      editModalController.close();
+
+      showDashboard();
+    }
+  });
+}
+
 function closeModal() {
   const buttonCloseModal = document.querySelector("#closeModalButton");
   const modalController = document.querySelector(".modal__controller__newPost");
@@ -141,3 +175,4 @@ await showDashboard();
 showHeader();
 showAddTaskModal();
 handleNewPostModal();
+editPostModal();
