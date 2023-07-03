@@ -65,6 +65,7 @@ export async function createNewUserRequest(createNewUserRequestBody) {
 // Requisição criar novo post
 export async function createPostRequest(createPostRequestBody) {
   const token = localStorage.getItem("@petInfo:tokenLogin");
+  console.log(createPostRequestBody);
   const newPost = await fetch(`${baseURL}/posts/create`, {
     method: "POST",
     headers: {
@@ -75,7 +76,7 @@ export async function createPostRequest(createPostRequestBody) {
   })
     .then(async (res) => {
       const responseJSON = await res.json();
-
+      console.log(responseJSON);
       if (res.ok) {
         toast("Post criado com sucesso", loginSucessColor);
         return responseJSON;

@@ -23,7 +23,7 @@
   <body>
     <header>
       <h2>Petinfo</h2>
-      <div>
+      <div class="header__content">
         <button id="create__publication">Criar Publicação</button>
         <img src="" class="img_user" />
         <!-- Src logic on JS -->
@@ -141,6 +141,42 @@
           </li>
         </ul>
       </section>
+      <dialog class="modal__controller__newPost">
+        <div class="newpost_modal__container">
+          <p>Criando novo post</p>
+          <button id="closeModalButton">X</button>
+        </div>
+        <form class="post_modal__form">
+          <div class="input__container">
+            <label for="post__title">Título do post</label>
+            <div>
+              <input
+                id="post__title"
+                type="text"
+                name="title"
+                class="create__task"
+                placeholder="Digite o título aqui..."
+              />
+            </div>
+          </div>
+          <div class="input__container">
+            <label for="post__content">Conteúdo do post</label>
+            <div>
+              <textarea
+                id="post__content"
+                name="content"
+                class="create__task"
+                placeholder="Desenvolva o conteúdo do post aqui..."
+              ></textarea>
+            </div>
+          </div>
+          <div class="modal__buttons">
+            <button id="cancelPublication">Cancelar</button>
+            <button id="sendPublication">Publicar</button>
+          </div>
+        </form>
+      </dialog>
+      <dialog class="modal__controller__editPost"></dialog>
     </main>
     <script
       type="text/javascript"
