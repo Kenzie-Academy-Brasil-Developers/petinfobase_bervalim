@@ -63,6 +63,7 @@ function deletePost() {
     ".modal__controller__exclusionConfirmation"
   );
   const closeModalButton = document.querySelector("#closeModalExclusionButton");
+  const cancelExclusionButton = document.querySelector("#cancelExclusionModal");
 
   exclusionButton.addEventListener("click", async () => {
     const idExclusionButton = exclusionButton.dataset.postId;
@@ -72,6 +73,10 @@ function deletePost() {
   });
 
   closeModalButton.addEventListener("click", () => {
+    modalController.close();
+  });
+
+  cancelExclusionButton.addEventListener("click", () => {
     modalController.close();
   });
 }
@@ -166,8 +171,13 @@ function editPostModal() {
 function closeModal() {
   const buttonCloseModal = document.querySelector("#closeModalButton");
   const modalController = document.querySelector(".modal__controller__newPost");
-
+  const cancelPublicationButton = document.querySelector("#cancelPublication");
   buttonCloseModal.addEventListener("click", () => {
+    modalController.close();
+  });
+
+  cancelPublicationButton.addEventListener("click", (event) => {
+    event.preventDefault();
     modalController.close();
   });
 }
@@ -177,11 +187,17 @@ function closeEditModal() {
   const modalController = document.querySelector(
     ".modal__controller__editPost"
   );
-
+  const buttonCancelEditModal = document.querySelector(
+    "#cancelEditPublication"
+  );
   buttonCloseEditModal.forEach((button) => {
     button.addEventListener("click", () => {
       modalController.close();
     });
+  });
+
+  buttonCancelEditModal.addEventListener("click", () => {
+    modalController.close();
   });
 }
 
