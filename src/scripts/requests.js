@@ -110,7 +110,10 @@ export async function getAllPosts() {
 }
 
 // Requisição para atualizar um post por id
+
 export async function updatePostById(updatePostByIdBody, postID) {
+  console.log(postID);
+  console.log(updatePostByIdBody);
   const token = localStorage.getItem("@petInfo:tokenLogin");
   const post = await fetch(`${baseURL}/posts/${postID}`, {
     method: "PATCH",

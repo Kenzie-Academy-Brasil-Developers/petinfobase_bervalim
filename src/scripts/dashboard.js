@@ -45,21 +45,19 @@ function showAddTaskModal() {
 }
 
 export function showEditTaskModal(button, title, content) {
-  // const buttonEditPublication = document.querySelectorAll(".edit__button");
   const modalController = document.querySelector(
     ".modal__controller__editPost"
   );
-  // buttonEditPublication.forEach((button) => {
+
   button.addEventListener("click", () => {
     const inputTitle = document.querySelector("#editTitle");
     const inputContent = document.querySelector("#editContent");
     inputTitle.value = title;
     inputContent.value = content;
     modalController.showModal();
+    modalController.dataset.postId = button.dataset.postId;
     closeEditModal();
   });
-
-  // });
 }
 
 function handleNewPostModal() {
@@ -107,7 +105,7 @@ function editPostModal() {
   const postEdition = {};
   let count = 0;
 
-  formEditModal.addEventListener("submit", (event) => {
+  formEditModal.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     inputsEditModal.forEach((input) => {
@@ -121,7 +119,7 @@ function editPostModal() {
       count = 0;
       toast("Por favor, preencha os dados necessários", loginFailureColor);
     } else {
-      updatePostById(event.target.dataset.postId, postEdition);
+      updatePostById(postEdition, editModalController.dataset.postId);
       toast("Post Atualizado com sucesso", loginSucessColor);
 
       editModalController.close();
