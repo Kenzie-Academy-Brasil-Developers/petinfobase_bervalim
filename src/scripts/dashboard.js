@@ -60,6 +60,8 @@ export function showEditTaskModal(button, title, content) {
   });
 }
 
+// export function accessPublicationModal()
+
 function handleNewPostModal() {
   const inputsCreateNewPost = document.querySelectorAll(".create__task");
   const buttonCreateNewPost = document.querySelector("#sendPublication");

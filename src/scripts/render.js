@@ -31,6 +31,9 @@ function createPost({ id, title, content, user, createdAt }) {
   const postDescription = document.createElement("p");
   const buttonAcessPost = document.createElement("p");
 
+  buttonAcessPost.addEventListener("click", () => {
+    renderModal(user, title, content, user.avatar);
+  });
   cardPostContainer.classList.add("card__container");
   divContainerFirst.classList.add("container__first");
   divPersonalUserInformation.classList.add("container__info");
@@ -79,4 +82,15 @@ function createPost({ id, title, content, user, createdAt }) {
   cardPostContainer.append(divContainerFirst, postDiv);
 
   return cardPostContainer;
+}
+
+function renderModal(user, title, content, image) {
+  const modalController = document.querySelector(
+    ".modal__controller__accessPost"
+  );
+  const modalImageUser = document.createElement("img");
+  const modalUserName = document.createElement("span");
+
+  modalUserName.innerText = user.username;
+  modalImageUser.src = image;
 }
