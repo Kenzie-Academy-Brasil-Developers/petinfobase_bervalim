@@ -73,7 +73,6 @@ function createPost({ id, title, content, user, createdAt }) {
         ".modal__controller__exclusionConfirmation"
       );
       modalController.showModal();
-      // showExclusionModal();
     });
     divButtons.append(editionButton, deleteButton);
   }

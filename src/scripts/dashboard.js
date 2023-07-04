@@ -62,15 +62,20 @@ function deletePost() {
   const modalController = document.querySelector(
     ".modal__controller__exclusionConfirmation"
   );
+  const closeModalButton = document.querySelector("#closeModalExclusionButton");
+
   exclusionButton.addEventListener("click", async () => {
-    // console.log(exclusionButton.dataset.postId);
     const idExclusionButton = exclusionButton.dataset.postId;
     await deletePostById(idExclusionButton);
     await showDashboard();
     modalController.close();
   });
+
+  closeModalButton.addEventListener("click", () => {
+    modalController.close();
+  });
 }
-deletePost();
+
 export function showEditTaskModal(button, title, content) {
   const modalController = document.querySelector(
     ".modal__controller__editPost"
@@ -202,3 +207,4 @@ await showDashboard();
 showAddTaskModal();
 handleNewPostModal();
 editPostModal();
+deletePost();
