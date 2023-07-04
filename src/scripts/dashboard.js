@@ -27,7 +27,7 @@ async function showHeader() {
   const showImage = await getUsersProfile();
   const imageHeader = document.createElement("img");
   const paragraphUsername = document.createElement("p");
-
+  localStorage.setItem("userId", JSON.stringify(showImage.id));
   imageHeader.src = showImage.avatar;
   paragraphUsername.innerText = showImage.username;
   divHeader.append(imageHeader, paragraphUsername);
@@ -167,8 +167,10 @@ export function handleDeletePosts() {
   });
 }
 
-// authentication();
+// Temos que comparar o token do usuário logado com o id de quem postou
+//
 
+// authentication();
 await showDashboard();
 showHeader();
 showAddTaskModal();

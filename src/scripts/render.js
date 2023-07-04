@@ -26,8 +26,6 @@ function createPost({ id, title, content, user, createdAt }) {
   const spanSymbol = document.createElement("span");
   const spanDate = document.createElement("span");
   const divButtons = document.createElement("div");
-  const editionButton = document.createElement("button");
-  const deleteButton = document.createElement("button");
   const postDiv = document.createElement("div");
   const postTitle = document.createElement("h2");
   const postDescription = document.createElement("p");
@@ -43,23 +41,32 @@ function createPost({ id, title, content, user, createdAt }) {
   spanUsername.innerText = user.username;
   spanSymbol.innerText = "|";
   spanDate.innerText = new Date(createdAt).toLocaleDateString();
-  editionButton.innerText = "Editar";
-  editionButton.classList.add("edit__button");
-  deleteButton.innerText = "Excluir";
-  deleteButton.dataset.postId = id;
-  editionButton.dataset.postId = id;
 
-  deleteButton.classList.add("delete__button");
-
-  deleteButton.addEventListener("click", async (event) => {
-    await deletePostById(event.target.dataset.postId);
-    cardPostContainer.remove();
-  });
-  showEditTaskModal(editionButton, title, content);
   postTitle.innerText = title;
   postDescription.innerText = content;
   buttonAcessPost.innerText = "Acessar publicação";
   buttonAcessPost.dataset.postId = id;
+
+  const userId = JSON.parse(localStorage.getItem("userId"));
+
+  let editionButton, deleteButton;
+  console.log({ localStorage: userId, post: user.id });
+  if (userId === user.id) {
+    editionButton = document.createElement("button");
+    deleteButton = document.createElement("button");
+    editionButton.innerText = "Editar";
+    editionButton.classList.add("edit__button");
+    deleteButton.innerText = "Excluir";
+    deleteButton.dataset.postId = id;
+    editionButton.dataset.postId = id;
+    deleteButton.classList.add("delete__button");
+    showEditTaskModal(editionButton, title, content);
+    deleteButton.addEventListener("click", async (event) => {
+      await deletePostById(event.target.dataset.postId);
+      cardPostContainer.remove();
+    });
+    divButtons.append(editionButton, deleteButton);
+  }
 
   divPersonalUserInformation.append(
     imageUser,
@@ -67,7 +74,6 @@ function createPost({ id, title, content, user, createdAt }) {
     spanSymbol,
     spanDate
   );
-  divButtons.append(editionButton, deleteButton);
   divContainerFirst.append(divPersonalUserInformation, divButtons);
   postDiv.append(postTitle, postDescription, buttonAcessPost);
   cardPostContainer.append(divContainerFirst, postDiv);
