@@ -25,7 +25,7 @@
       <h2>Petinfo</h2>
       <div class="header__content">
         <button id="create__publication">Criar Publicação</button>
-        <img src="" class="img_user" />
+
         <!-- Src logic on JS -->
       </div>
     </header>
@@ -143,75 +143,81 @@
       </section>
       <dialog class="modal__controller__newPost">
         <div class="newpost_modal__container">
-          <p>Criando novo post</p>
-          <button id="closeModalButton">X</button>
+          <div>
+            <p>Criando novo post</p>
+            <button id="closeModalButton">X</button>
+          </div>
+
+          <form class="post_modal__form">
+            <div class="input__container">
+              <label for="post__title">Título do post</label>
+              <div>
+                <input
+                  id="post__title"
+                  type="text"
+                  name="title"
+                  class="create__task"
+                  placeholder="Digite o título aqui..."
+                />
+              </div>
+            </div>
+            <div class="input__container">
+              <label for="post__content">Conteúdo do post</label>
+              <div>
+                <textarea
+                  id="post__content"
+                  name="content"
+                  class="create__task"
+                  placeholder="Desenvolva o conteúdo do post aqui..."
+                ></textarea>
+              </div>
+            </div>
+            <div class="modal__buttons">
+              <button id="cancelPublication">Cancelar</button>
+              <button id="sendPublication">Publicar</button>
+            </div>
+          </form>
         </div>
-        <form class="post_modal__form">
-          <div class="input__container">
-            <label for="post__title">Título do post</label>
-            <div>
-              <input
-                id="post__title"
-                type="text"
-                name="title"
-                class="create__task"
-                placeholder="Digite o título aqui..."
-              />
-            </div>
-          </div>
-          <div class="input__container">
-            <label for="post__content">Conteúdo do post</label>
-            <div>
-              <textarea
-                id="post__content"
-                name="content"
-                class="create__task"
-                placeholder="Desenvolva o conteúdo do post aqui..."
-              ></textarea>
-            </div>
-          </div>
-          <div class="modal__buttons">
-            <button id="cancelPublication">Cancelar</button>
-            <button id="sendPublication">Publicar</button>
-          </div>
-        </form>
       </dialog>
       <dialog class="modal__controller__editPost">
         <div class="edit_post_modal__container">
-          <p>edição</p>
-          <button id="close__button">X</button>
+          <div>
+            <p>edição</p>
+            <button id="close__button">X</button>
+          </div>
+
+          <form class="edit__form">
+            <div class="edit__container">
+              <label for="editTitle">Título do post</label>
+              <div>
+                <input
+                  type="text"
+                  id="editTitle"
+                  name="title"
+                  class="edit__post"
+                  required
+                  minlength="8"
+                  maxlength="140"
+                />
+              </div>
+            </div>
+            <div class="edit__container">
+              <label for="editContent">Conteúdo do post</label>
+              <div>
+                <textarea
+                  id="editContent"
+                  name="content"
+                  class="edit__post"
+                  required
+                ></textarea>
+              </div>
+            </div>
+            <div class="edit__buttons">
+              <button type="button">Cancelar</button>
+              <button id="editPublication">Salvar alterações</button>
+            </div>
+          </form>
         </div>
-        <form class="edit__form">
-          <div class="edit__container">
-            <label for="editTitle">Título do post</label>
-            <div>
-              <input
-                type="text"
-                id="editTitle"
-                name="title"
-                class="edit__post"
-                required
-                minlength="8"
-                maxlength="140"
-              />
-            </div>
-          </div>
-          <div class="edit__container">
-            <label for="editContent">Conteúdo do post</label>
-            <div>
-              <textarea
-                id="editContent"
-                name="content"
-                class="edit__post"
-                required
-              ></textarea>
-            </div>
-          </div>
-          <div class="edit__buttons">
-            <button type="button">Cancelar</button>
-            <button id="editPublication">Salvar alterações</button>
-          </div>
-        </form>
       </dialog>
       <dialog class="modal__controller__accessPost">
         <div class="modalAcess__container">
@@ -234,6 +240,23 @@
               câncer de mama. Ainda hoje, para ambas as espécies, o câncer de
               mama tem maior...
             </p>
+          </div>
+        </div>
+      </dialog>
+      <dialog class="modal__controller__exclusionConfirmation">
+        <div class="exclusionModal__container">
+          <div class="exclusionModal__closure">
+            <p>Confirmação de exclusão</p>
+            <button>X</button>
+          </div>
+          <h3>Tem certeza que deseja excluir este post?</h3>
+          <p>
+            Essa alteração não pode ser desfeita,então pedimos que tenha cautela
+            antes de concluir
+          </p>
+          <div class="exclusionModal__buttons">
+            <button>Cancelar</button>
+            <button id="exclusionButton">Sim,excluir este post</button>
           </div>
         </div>
       </dialog>

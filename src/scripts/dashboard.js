@@ -34,7 +34,7 @@ async function showHeader() {
   imageHeader.src = showImage.avatar;
   paragraphUsername.innerText = showImage.username;
   divHeader.append(imageHeader, paragraphUsername, logoutButton);
-
+  // imageHeader.append(paragraphUsername, logoutButton);
   logoutAction();
 }
 
@@ -57,6 +57,20 @@ function showAddTaskModal() {
   });
 }
 
+function deletePost() {
+  const exclusionButton = document.querySelector("#exclusionButton");
+  const modalController = document.querySelector(
+    ".modal__controller__exclusionConfirmation"
+  );
+  exclusionButton.addEventListener("click", async () => {
+    // console.log(exclusionButton.dataset.postId);
+    const idExclusionButton = exclusionButton.dataset.postId;
+    await deletePostById(idExclusionButton);
+    await showDashboard();
+    modalController.close();
+  });
+}
+deletePost();
 export function showEditTaskModal(button, title, content) {
   const modalController = document.querySelector(
     ".modal__controller__editPost"
@@ -182,12 +196,9 @@ export function handleDeletePosts() {
   });
 }
 
-// Temos que comparar o token do usuário logado com o id de quem postou
-//
-
 authentication();
+await showHeader();
 await showDashboard();
-showHeader();
 showAddTaskModal();
 handleNewPostModal();
 editPostModal();

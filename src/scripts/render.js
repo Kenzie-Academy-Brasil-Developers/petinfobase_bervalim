@@ -51,7 +51,7 @@ function createPost({ id, title, content, user, createdAt }) {
   buttonAcessPost.dataset.postId = id;
 
   const userId = JSON.parse(localStorage.getItem("userId"));
-
+  console.log(userId);
   let editionButton, deleteButton;
 
   if (userId === user.id) {
@@ -65,8 +65,15 @@ function createPost({ id, title, content, user, createdAt }) {
     deleteButton.classList.add("delete__button");
     showEditTaskModal(editionButton, title, content);
     deleteButton.addEventListener("click", async (event) => {
-      await deletePostById(event.target.dataset.postId);
-      cardPostContainer.remove();
+      // await deletePostById(event.target.dataset.postId);
+      // cardPostContainer.remove();
+      const exclusionButton = document.querySelector("#exclusionButton");
+      exclusionButton.dataset.postId = id;
+      const modalController = document.querySelector(
+        ".modal__controller__exclusionConfirmation"
+      );
+      modalController.showModal();
+      // showExclusionModal();
     });
     divButtons.append(editionButton, deleteButton);
   }
