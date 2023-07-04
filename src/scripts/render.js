@@ -127,4 +127,8 @@ function renderModal(user, title, content, image, createdAt) {
   divAccessContainer.append(divAccessFirst, divAccessPost);
   modalController.append(divAccessContainer);
   modalController.showModal();
+
+  modalCloseButton.addEventListener("click", () => {
+    modalController.close();
+  });
 }

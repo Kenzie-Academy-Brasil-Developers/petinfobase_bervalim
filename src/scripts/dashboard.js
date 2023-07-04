@@ -27,10 +27,23 @@ async function showHeader() {
   const showImage = await getUsersProfile();
   const imageHeader = document.createElement("img");
   const paragraphUsername = document.createElement("p");
+  const logoutButton = document.createElement("button");
+  logoutButton.classList.add("header__button");
+  logoutButton.innerText = "Sair da conta";
   localStorage.setItem("userId", JSON.stringify(showImage.id));
   imageHeader.src = showImage.avatar;
   paragraphUsername.innerText = showImage.username;
-  divHeader.append(imageHeader, paragraphUsername);
+  divHeader.append(imageHeader, paragraphUsername, logoutButton);
+
+  logoutAction();
+}
+
+function logoutAction() {
+  const logoutButton = document.querySelector(".header__button");
+  logoutButton.addEventListener("click", () => {
+    localStorage.clear();
+    location.replace("../../index.html");
+  });
 }
 
 function showAddTaskModal() {
@@ -172,7 +185,7 @@ export function handleDeletePosts() {
 // Temos que comparar o token do usuário logado com o id de quem postou
 //
 
-// authentication();
+authentication();
 await showDashboard();
 showHeader();
 showAddTaskModal();

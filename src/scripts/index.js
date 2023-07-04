@@ -2,12 +2,12 @@
 import { loginRequest, loginFailureColor } from "./requests.js";
 import { toast } from "./toast.js";
 
-// function authentication() {
-//   const token = localStorage.getItem("@petInfo:tokenLogin");
-//   if (token) {
-//     location.replace("./src/pages/dashboard.html");
-//   }
-// }
+function authentication() {
+  const token = localStorage.getItem("@petInfo:tokenLogin");
+  if (token) {
+    location.replace("./src/pages/dashboard.html");
+  }
+}
 
 function handleLoginRequest() {
   const inputsLoginRequest = document.querySelectorAll(".input__login");
@@ -36,5 +36,5 @@ function handleLoginRequest() {
     }
   });
 }
-// authentication();
+authentication();
 handleLoginRequest();
