@@ -32,7 +32,7 @@ function createPost({ id, title, content, user, createdAt }) {
   const buttonAcessPost = document.createElement("p");
 
   buttonAcessPost.addEventListener("click", () => {
-    renderModal(user, title, content, user.avatar);
+    renderModal(user, title, content, user.avatar, createdAt);
   });
   cardPostContainer.classList.add("card__container");
   divContainerFirst.classList.add("container__first");
@@ -53,7 +53,7 @@ function createPost({ id, title, content, user, createdAt }) {
   const userId = JSON.parse(localStorage.getItem("userId"));
 
   let editionButton, deleteButton;
-  console.log({ localStorage: userId, post: user.id });
+
   if (userId === user.id) {
     editionButton = document.createElement("button");
     deleteButton = document.createElement("button");
@@ -84,13 +84,47 @@ function createPost({ id, title, content, user, createdAt }) {
   return cardPostContainer;
 }
 
-function renderModal(user, title, content, image) {
+function renderModal(user, title, content, image, createdAt) {
   const modalController = document.querySelector(
     ".modal__controller__accessPost"
   );
+
+  modalController.innerHTML = "";
+  const divAccessContainer = document.createElement("div");
+  const divAccessFirst = document.createElement("div");
+  const divAccessInfo = document.createElement("div");
+  const divAccessPost = document.createElement("div");
   const modalImageUser = document.createElement("img");
   const modalUserName = document.createElement("span");
+  const modalUserData = document.createElement("span");
+  const modalSpanSymbol = document.createElement("span");
+  const modalCloseButton = document.createElement("button");
+  const modalTitle = document.createElement("h2");
+  const modalContent = document.createElement("p");
 
+  divAccessContainer.classList.add("modalAcess__container");
+  divAccessFirst.classList.add("Access__first");
+  divAccessInfo.classList.add("Access__info");
+  divAccessPost.classList.add("Access__post");
+  modalCloseButton.id = "closeAccessModal";
+
+  modalCloseButton.innerText = "X";
   modalUserName.innerText = user.username;
   modalImageUser.src = image;
+  modalUserData.innerText = new Date(createdAt).toLocaleDateString();
+  modalTitle.innerText = title;
+  modalContent.innerText = content;
+  modalSpanSymbol.innerText = "|";
+
+  divAccessInfo.append(
+    modalImageUser,
+    modalUserName,
+    modalSpanSymbol,
+    modalUserData
+  );
+  divAccessFirst.append(divAccessInfo, modalCloseButton);
+  divAccessPost.append(modalTitle, modalContent);
+  divAccessContainer.append(divAccessFirst, divAccessPost);
+  modalController.append(divAccessContainer);
+  modalController.showModal();
 }
