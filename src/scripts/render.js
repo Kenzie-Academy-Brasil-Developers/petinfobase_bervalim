@@ -51,7 +51,23 @@ function createPost({ id, title, content, user, createdAt }) {
   spanDate.innerText = dateFormat.format(date);
 
   postTitle.innerText = title;
-  postDescription.innerText = content;
+
+  let text = "";
+
+  // text = [content];
+  for (let c of content) {
+    if (text.length < 145) {
+      text += c;
+    }
+  }
+  console.log(text);
+
+  if (content.length >= 145) {
+    postDescription.innerText = `${text} ...`;
+  } else {
+    postDescription.innerText = text;
+  }
+
   buttonAcessPost.innerText = "Acessar publicação";
   buttonAcessPost.dataset.postId = id;
 
