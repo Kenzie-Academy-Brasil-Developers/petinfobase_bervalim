@@ -52,20 +52,19 @@ function createPost({ id, title, content, user, createdAt }) {
 
   postTitle.innerText = title;
 
-  let text = "";
+  let textContentResumed = "";
 
   // text = [content];
   for (let c of content) {
-    if (text.length < 145) {
-      text += c;
+    if (textContentResumed.length < 145) {
+      textContentResumed += c;
     }
   }
-  console.log(text);
 
   if (content.length >= 145) {
-    postDescription.innerText = `${text} ...`;
+    postDescription.innerText = `${textContentResumed} ...`;
   } else {
-    postDescription.innerText = text;
+    postDescription.innerText = textContentResumed;
   }
 
   buttonAcessPost.innerText = "Acessar publicação";
