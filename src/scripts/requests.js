@@ -58,7 +58,9 @@ export async function createNewUserRequest(createNewUserRequestBody) {
       }
     })
     .catch((err) => {
-      toast(err.message, loginFailureColor);
+      setTimeout(() => {
+        toast(err.message, loginFailureColor);
+      }, 1000);
     });
 
   return newUser;
