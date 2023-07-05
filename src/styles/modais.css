@@ -229,3 +229,101 @@
 #editPublication:hover {
   background-color: var(--brand200);
 }
+
+.modal__controller__exclusionConfirmation {
+  width: 800px;
+  height: 220px;
+  background-color: var(--gray900);
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+}
+
+.modal__controller__exclusionConfirmation ::backdrop {
+  background-color: #ffffff70;
+}
+
+.exclusionModal__container {
+  width: 800px;
+  height: 220px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.exclusionModal__closure {
+  position: relative;
+}
+
+.exclusionModal__closure > p {
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--gray100);
+}
+
+#closeModalExclusionButton {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  bottom: -5px;
+  right: 10px;
+  font-family: "nunito", "sans-serif";
+  cursor: pointer;
+  background-color: var(--gray600);
+  color: var(--gray400);
+  border-radius: 0.25rem;
+  border: none;
+  font-weight: 700;
+}
+
+.exclusionModal__content {
+  margin-top: 26px;
+}
+
+.exclusionModal__content > h3 {
+  font-weight: 500;
+  font-size: 22px;
+  color: var(--gray100);
+  margin-bottom: 12px;
+}
+
+.exclusionModal__content > p {
+  color: var(--gray300);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.exclusionModal__buttons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+#cancelExclusionModal {
+  border-radius: 0.25rem;
+  width: 100px;
+  padding: 8px 12px;
+  background-color: var(--gray600);
+  border: 1px solid var(--gray600);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--gray400);
+  cursor: pointer;
+}
+
+#cancelExclusionModal:hover {
+  background-color: var(--gray500);
+}
+
+#exclusionButton {
+  width: 170px;
+  border-radius: 0.25rem;
+  padding: 8px 5px;
+  background-color: var(--alert100);
+  border: 1px solid var(--alert100);
+  font-weight: 500;
+  cursor: pointer;
+  color: var(--gray900);
+  font-size: 1rem;
+}
