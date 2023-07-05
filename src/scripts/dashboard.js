@@ -47,12 +47,12 @@ function makeLogoutAndUserNameAppear() {
   const divAccountUsername = document.querySelector(".show");
 
   imageHeader.addEventListener("click", () => {
-    if (divAccountUsername.classList.contains("show")) {
-      divAccountUsername.classList.add("hidden");
-      divAccountUsername.classList.remove("show");
-    } else {
+    if (divAccountUsername.classList.contains("hidden")) {
       divAccountUsername.classList.add("show");
       divAccountUsername.classList.remove("hidden");
+    } else {
+      divAccountUsername.classList.add("hidden");
+      divAccountUsername.classList.remove("show");
     }
   });
 }
