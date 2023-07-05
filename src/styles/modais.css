@@ -113,3 +113,119 @@
 #sendPublication:hover {
   background-color: var(--brand200);
 }
+
+.modal__controller__editPost {
+  width: 800px;
+  height: 600px;
+  background-color: var(--gray900);
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.modal__controller__editPost ::backdrop {
+  background-color: #ffffff70;
+}
+
+.edit_post_modal__container {
+  width: 800px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  padding: 32px 24px;
+}
+
+.edit_post_modal__container > p {
+  font-size: 1.25rem;
+  color: var(--gray100);
+  font-weight: 500;
+}
+
+#close__button {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  top: 26px;
+  right: 28px;
+  font-family: "nunito", "sans-serif";
+  cursor: pointer;
+  background-color: var(--gray600);
+  color: var(--gray400);
+  border-radius: 0.25rem;
+  border: none;
+  font-weight: 700;
+}
+
+.edit__container {
+  margin-top: 34px;
+}
+
+.edit__container > label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--gray100);
+}
+
+.edit__post {
+  margin-top: 10px;
+  width: 700px;
+  padding: 12px 17px;
+  border: 1px solid rgba(217, 217, 217, 1);
+  background-color: var(--gray700);
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--gray100);
+}
+
+.edit__post:focus {
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
+}
+
+#editContent {
+  height: 240px;
+  resize: none;
+}
+
+.edit__buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 14px;
+  margin-top: 40px;
+  padding: 0 15px;
+}
+
+#cancelEditPublication {
+  border-radius: 0.25rem;
+  width: 100px;
+  padding: 8px 12px;
+  background-color: var(--gray600);
+  border: 1px solid var(--gray600);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--gray400);
+  cursor: pointer;
+}
+
+#cancelEditPublication:hover {
+  background-color: var(--gray500);
+}
+
+#editPublication {
+  width: 130px;
+  border-radius: 0.25rem;
+  padding: 8px 12px;
+  background-color: var(--brand100);
+  border: 1px solid var(--brand100);
+  font-weight: 500;
+  color: var(--gray900);
+  cursor: pointer;
+}
+
+#editPublication:hover {
+  background-color: var(--brand200);
+}
