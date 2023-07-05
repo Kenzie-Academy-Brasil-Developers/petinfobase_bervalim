@@ -30,7 +30,9 @@ export async function loginRequest(loginRequestBody) {
       }
     })
     .catch((err) => {
-      toast(err.message, loginFailureColor);
+      setTimeout(() => {
+        toast(err.message, loginFailureColor);
+      }, 1000);
     });
   return tokenLogin;
 }

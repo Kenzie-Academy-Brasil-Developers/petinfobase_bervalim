@@ -43,7 +43,12 @@ function createPost({ id, title, content, user, createdAt }) {
   imageUser.src = user.avatar;
   spanUsername.innerText = user.username;
   spanSymbol.innerText = "|";
-  spanDate.innerText = new Date(createdAt).toLocaleDateString();
+  const date = new Date(createdAt);
+  const dateFormat = new Intl.DateTimeFormat("pt-BR", {
+    month: "long",
+    year: "numeric",
+  });
+  spanDate.innerText = dateFormat.format(date);
 
   postTitle.innerText = title;
   postDescription.innerText = content;
@@ -117,7 +122,14 @@ function renderModal(user, title, content, image, createdAt) {
   modalCloseButton.innerText = "X";
   modalUserName.innerText = user.username;
   modalImageUser.src = image;
-  modalUserData.innerText = new Date(createdAt).toLocaleDateString();
+
+  const date = new Date(createdAt);
+  const dateFormat = new Intl.DateTimeFormat("pt-BR", {
+    month: "long",
+    year: "numeric",
+  });
+
+  modalUserData.innerText = dateFormat.format(date);
   modalTitle.innerText = title;
   modalContent.innerText = content;
   modalSpanSymbol.innerText = "|";

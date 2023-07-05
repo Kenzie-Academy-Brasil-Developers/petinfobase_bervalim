@@ -28,14 +28,33 @@ async function showHeader() {
   const imageHeader = document.createElement("img");
   const paragraphUsername = document.createElement("p");
   const logoutButton = document.createElement("button");
+  const divAccountUsername = document.createElement("div");
   logoutButton.classList.add("header__button");
   logoutButton.innerText = "Sair da conta";
   localStorage.setItem("userId", JSON.stringify(showImage.id));
   imageHeader.src = showImage.avatar;
+  imageHeader.classList.add("imageHeader");
   paragraphUsername.innerText = showImage.username;
-  divHeader.append(imageHeader, paragraphUsername, logoutButton);
+  divAccountUsername.classList.add("show");
+  divHeader.append(imageHeader, divAccountUsername);
   // imageHeader.append(paragraphUsername, logoutButton);
+  divAccountUsername.append(paragraphUsername, logoutButton);
   logoutAction();
+}
+
+function makeLogoutAndUserNameAppear() {
+  const imageHeader = document.querySelector(".imageHeader");
+  const divAccountUsername = document.querySelector(".show");
+
+  imageHeader.addEventListener("click", () => {
+    if (divAccountUsername.classList.contains("show")) {
+      divAccountUsername.classList.add("hidden");
+      divAccountUsername.classList.remove("show");
+    } else {
+      divAccountUsername.classList.add("show");
+      divAccountUsername.classList.remove("hidden");
+    }
+  });
 }
 
 function logoutAction() {
@@ -224,3 +243,4 @@ showAddTaskModal();
 handleNewPostModal();
 editPostModal();
 deletePost();
+makeLogoutAndUserNameAppear();

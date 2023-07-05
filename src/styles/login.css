@@ -51,7 +51,7 @@
   border: 0.0625rem solid var(--gray600);
   border-radius: 0.25rem;
   width: 368px;
-  height: 500px;
+  height: 550px;
   padding: 35px 24px;
 }
 
@@ -142,4 +142,34 @@
   font-size: 0.875rem;
   color: var(--gray100);
   padding: 8px 12px;
+}
+
+.loading__login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.spinner {
+  margin-top: 2rem;
+  text-align: center;
+  height: 25px;
+  width: 25px;
+  border-top: 2px solid var(--brand100);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
