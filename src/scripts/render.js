@@ -39,6 +39,9 @@ function createPost({ id, title, content, user, createdAt }) {
   divPersonalUserInformation.classList.add("container__info");
   divButtons.classList.add("container__buttons");
   postDiv.classList.add("post");
+  spanUsername.classList.add("spanUsername");
+  spanSymbol.classList.add("spanSymbol");
+  spanDate.classList.add("spanDate");
 
   imageUser.src = user.avatar;
   spanUsername.innerText = user.username;
