@@ -1,15 +1,42 @@
 .show {
-  display: block;
+  visibility: visible;
+  animation: showAnimation 1s ease-in-out;
 }
 
 .hidden {
-  display: none;
+  animation: hiddenAnimation 1s ease-in-out;
+  visibility: hidden;
+}
+
+.animateClass {
+  animation: hiddenAnimation 1s ease-in-out;
+}
+
+@keyframes showAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hiddenAnimation {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 .imageHeader {
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .header__container {
@@ -31,12 +58,13 @@
 .header__content {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   gap: 8px;
 }
 
 #create__publication {
   width: 160px;
-  padding: 0 16px;
+  padding: 5px 12px;
   border-radius: 0.25rem;
   border: 1px solid var(--brand100);
   background-color: var(--brand100);

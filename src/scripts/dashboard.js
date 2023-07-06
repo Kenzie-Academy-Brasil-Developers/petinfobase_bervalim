@@ -49,14 +49,18 @@ async function showHeader() {
 function makeLogoutAndUserNameAppear() {
   const imageHeader = document.querySelector(".imageHeader");
   const divAccountUsername = document.querySelector(".show");
-
+  divAccountUsername.classList.add("hidden");
   imageHeader.addEventListener("click", () => {
     if (divAccountUsername.classList.contains("hidden")) {
       divAccountUsername.classList.add("show");
       divAccountUsername.classList.remove("hidden");
     } else {
-      divAccountUsername.classList.add("hidden");
-      divAccountUsername.classList.remove("show");
+      divAccountUsername.classList.add("animateClass");
+      setTimeout(() => {
+        divAccountUsername.classList.add("hidden");
+        divAccountUsername.classList.remove("show");
+        divAccountUsername.classList.remove("animateClass ");
+      }, 1000);
     }
   });
 }
