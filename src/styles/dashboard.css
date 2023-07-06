@@ -140,6 +140,7 @@
   font-weight: 500;
   font-size: 0.875rem;
   color: var(--gray100);
+  cursor: pointer;
 }
 
 .delete__button {
@@ -150,6 +151,7 @@
   font-weight: 500;
   font-size: 0.875rem;
   color: var(--gray400);
+  cursor: pointer;
 }
 
 .post > h2 {
@@ -159,4 +161,46 @@
   color: var(--gray100);
 }
 
-.post;
+.paragraph__content {
+  margin-top: 15px;
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--gray300);
+}
+
+.button__access {
+  margin-top: 15px;
+  font-weight: 500;
+  color: var(--brand100);
+  font-size: 1rem;
+  width: max-content;
+  cursor: pointer;
+}
+
+.button__access:hover {
+  text-decoration: underline;
+}
+
+.show > p {
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--gray100);
+}
+
+.icon_image {
+  width: 20px;
+}
+
+.header__button {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-weight: 500;
+  color: var(--gray400);
+  border-radius: 0.25rem;
+  background-color: var(--gray600);
+  border: 1px solid var(--gray600);
+}

@@ -28,16 +28,20 @@ async function showHeader() {
   const imageHeader = document.createElement("img");
   const paragraphUsername = document.createElement("p");
   const logoutButton = document.createElement("button");
+  const iconImage = document.createElement("img");
   const divAccountUsername = document.createElement("div");
   logoutButton.classList.add("header__button");
   logoutButton.innerText = "Sair da conta";
   localStorage.setItem("userId", JSON.stringify(showImage.id));
   imageHeader.src = showImage.avatar;
+  iconImage.src = "../assets/img/logout.svg";
   imageHeader.classList.add("imageHeader");
+  iconImage.classList.add("icon_image");
   paragraphUsername.innerText = showImage.username;
   divAccountUsername.classList.add("show");
   divHeader.append(imageHeader, divAccountUsername);
   // imageHeader.append(paragraphUsername, logoutButton);
+  logoutButton.appendChild(iconImage);
   divAccountUsername.append(paragraphUsername, logoutButton);
   logoutAction();
 }
