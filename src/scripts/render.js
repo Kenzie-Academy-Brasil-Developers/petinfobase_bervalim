@@ -42,6 +42,8 @@ function createPost({ id, title, content, user, createdAt }) {
   spanUsername.classList.add("spanUsername");
   spanSymbol.classList.add("spanSymbol");
   spanDate.classList.add("spanDate");
+  postDescription.classList.add("paragraph__content");
+  buttonAcessPost.classList.add("button__access");
 
   imageUser.src = user.avatar;
   spanUsername.innerText = user.username;
