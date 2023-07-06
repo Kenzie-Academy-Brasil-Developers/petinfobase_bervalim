@@ -5,3 +5,46 @@
 .hidden {
   display: none;
 }
+
+.imageHeader {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 50rem;
+  padding: 80px 50px;
+  margin: 0 auto;
+}
+
+.header__container > h2 {
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: var(--gray100);
+}
+
+.header__content {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+#create__publication {
+  width: 180px;
+  padding: 0 16px;
+  border-radius: 0.25rem;
+  border: 1px solid var(--brand100);
+  background-color: var(--brand100);
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--gray900);
+  cursor: pointer;
+}
+
+#create__publication:hover {
+  background-color: var(--brand200);
+}

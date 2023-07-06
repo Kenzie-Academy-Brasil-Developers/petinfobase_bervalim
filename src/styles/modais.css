@@ -116,7 +116,7 @@
 
 .modal__controller__editPost {
   width: 800px;
-  height: 600px;
+  height: 1000px;
   background-color: var(--gray900);
   padding: 0;
   border: none;
@@ -130,7 +130,7 @@
 
 .edit_post_modal__container {
   width: 800px;
-  height: 600px;
+  height: 680px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -187,7 +187,7 @@
 }
 
 #editContent {
-  height: 240px;
+  height: 200px;
   resize: none;
 }
 
@@ -195,7 +195,7 @@
   display: flex;
   justify-content: flex-end;
   gap: 14px;
-  margin-top: 40px;
+  margin-top: 20px;
   padding: 0 15px;
 }
 
@@ -326,4 +326,89 @@
   cursor: pointer;
   color: var(--gray900);
   font-size: 1rem;
+}
+
+.modal__controller__accessPost {
+  width: 800px;
+  height: 570px;
+  background-color: var(--gray900);
+  padding: 0;
+  border: none;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.modal__controller__accessPost ::backdrop {
+  background-color: #ffffff70;
+}
+
+.modalAcess__container {
+  width: 800px;
+  height: 570px;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 24px;
+  position: relative;
+}
+
+#closeAccessModal {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  top: 38px;
+  right: 28px;
+  font-family: "nunito", "sans-serif";
+  cursor: pointer;
+  background-color: var(--gray600);
+  color: var(--gray400);
+  border-radius: 0.25rem;
+  border: none;
+  font-weight: 700;
+}
+
+.Access__info > img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.Access__info {
+  display: flex;
+  justify-content: flex-start;
+  gap: 22px;
+}
+
+.modalUserName {
+  margin-top: 15px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: var(--gray100);
+}
+
+.modalUserData {
+  margin-top: 15px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: var(--gray400);
+}
+
+.modalSpanSymbol {
+  margin-top: 10px;
+  font-weight: 500;
+  font-size: 1.25rem;
+  color: var(--gray600);
+}
+
+.Access__post > h2 {
+  margin-top: 48px;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: var(--gray100);
+}
+
+.Access__post > p {
+  margin-top: 25px;
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--gray300);
 }

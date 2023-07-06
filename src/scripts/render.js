@@ -133,6 +133,9 @@ function renderModal(user, title, content, image, createdAt) {
   divAccessInfo.classList.add("Access__info");
   divAccessPost.classList.add("Access__post");
   modalCloseButton.id = "closeAccessModal";
+  modalUserName.classList.add("modalUserName");
+  modalUserData.classList.add("modalUserData");
+  modalSpanSymbol.classList.add("modalSpanSymbol");
 
   modalCloseButton.innerText = "X";
   modalUserName.innerText = user.username;
