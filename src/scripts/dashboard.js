@@ -133,7 +133,7 @@ function handleNewPostModal() {
   const newPost = {};
   let count = 0;
 
-  buttonCreateNewPost.addEventListener("click", (event) => {
+  buttonCreateNewPost.addEventListener("click", async (event) => {
     event.preventDefault();
 
     inputsCreateNewPost.forEach((input) => {
@@ -153,7 +153,7 @@ function handleNewPostModal() {
     } else {
       createPostRequest(newPost);
       modalController.close();
-      showDashboard();
+      await showDashboard();
 
       inputsCreateNewPost.forEach((input) => {
         input.value = "";
