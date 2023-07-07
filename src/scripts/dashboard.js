@@ -190,7 +190,7 @@ function editPostModal() {
 
       editModalController.close();
 
-      showDashboard();
+      await showDashboard();
     }
   });
 }
